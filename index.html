@@ -35,18 +35,46 @@
     }
   </script>
 
+  <!--Slider 360 Script-->
+  <script>
+      Number.prototype.roundTo = function(nTo) {
+        nTo = nTo || 10;
+        return Math.round(this * (1 / nTo) ) * nTo;
+    }
+
+    $(function() {
+        var slides = $('#slider ul').children().length;
+        var slideWidth = $('#slider').width();
+        var min = 0;
+        var max = -((slides - 1) * slideWidth);
+
+        $("#slider ul").width(slides*slideWidth).draggable({
+            axis: 'x',
+            drag: function (event, ui) {
+                if (ui.position.left > min) ui.position.left = min;
+                if (ui.position.left < max) ui.position.left = max;
+            },
+            stop: function( event, ui ) {
+                $(this).animate({'left': (ui.position.left).roundTo(slideWidth)})
+            }
+        });
+    });
+  </script>
 
   <!-- Link to CSS file -->
   <link rel="stylesheet" type="text/css" href="index.css"></link>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 
 <body>
   <!-- Navigation Bar -->
   <div class="topnav" id="myTopnav">
-    <a href="#home">Home</a>
+    <a href="index.html">Home</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="interior.html">370Z</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
@@ -54,16 +82,20 @@
 
   <!--  Content  -->
 
-  <!--  Video is muted & autoplays -->
-  <div class = "row col-12 col-m-12">
-    <video autoplay loop id="video-background" muted>
-      <source src="Nissan 370Z Forest Run _ Mike Koziel.mp4" type="video/mp4">
-    </video>
-
-    <div class = "centerlogo">
-      fdsf
-    </div>
+  <!--  Video is muted & autoplays + "NISSAN" -->
+  <div class = "row col-12 col-m-12" style = "position: absolute; top: 0px;">
+    <div class = "row col-12 col-m-12">
+      <div id = "container">
+        <video autoplay loop id="video-background" style= "position: absolute; top: 0px; width: 100%; height: auto" muted>
+          <source src="Nissan 370Z Forest Run _ Mike Koziel-cut.mp4" type="video/mp4">
+        </video>
+        <div class = "row col-12 col-m-12" id = "content">
+          <h1 style="font-weight: bold; font-size: 300%; color: white; font-family: Oswald, sans-serif;">NISSAN 370Z</h1>
+        </div>
+      </div>
   </div>
+  </div>
+
   </body>
 
 </html>
