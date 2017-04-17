@@ -13,6 +13,139 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='//fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
     <style>
+
+        /* Add a black background color to the top navigation */
+       .topnav {
+           overflow: hidden;
+           background-color: #101010;
+           font-family: 'Abril Fatface';font-size: 22px;
+       }
+
+       /* Style the links inside the navigation bar */
+       .topnav a {
+           float: right;
+           display: block;
+           color: white;
+           text-align: center;
+           padding: 1% 1%;
+           text-decoration: none;
+           font-size: 17px;
+           font-family: 'Abril Fatface';font-size: 22px;
+       }
+
+       /* Change the color of links on hover */
+       .topnav a:hover {
+           background-color: #ef3c3c;
+           color: white;
+           font-family: 'Abril Fatface';font-size: 22px;
+       }
+
+       /* Hide the link that should open and close the topnav on small screens */
+       .topnav .icon {
+           display: none;
+       }
+
+        /* MEDIA QUERIES */
+        /* For mobile phones: */
+       [class*="col-"] {
+           width: 100%;
+       }
+       @media only screen and (min-width: 600px) {
+           /* For tablets: */
+           .col-m-1 {width: 8.33%;}
+           .col-m-2 {width: 16.66%;}
+           .col-m-3 {width: 25%;}
+           .col-m-4 {width: 33.33%;}
+           .col-m-5 {width: 41.66%;}
+           .col-m-6 {width: 50%;}
+           .col-m-7 {width: 58.33%;}
+           .col-m-8 {width: 66.66%;}
+           .col-m-9 {width: 75%;}
+           .col-m-10 {width: 83.33%;}
+           .col-m-11 {width: 91.66%;}
+           .col-m-12 {width: 100%;}
+       }
+       @media only screen and (min-width: 768px) {
+           /* For desktop: */
+           .col-1 {width: 8.33%;}
+           .col-2 {width: 16.66%;}
+           .col-3 {width: 25%;}
+           .col-4 {width: 33.33%;}
+           .col-5 {width: 41.66%;}
+           .col-6 {width: 50%;}
+           .col-7 {width: 58.33%;}
+           .col-8 {width: 66.66%;}
+           .col-9 {width: 75%;}
+           .col-10 {width: 83.33%;}
+           .col-11 {width: 91.66%;}
+           .col-12 {width: 100%;}
+       }
+
+       body {
+         margin: 0;
+         padding: 0;
+       /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+         background: white;
+         background-attachment: fixed;
+         background-size: cover;
+       }
+
+       /* The only rule that matters */
+       #video-background {
+       /*  making the video fullscreen  */
+         position: fixed;
+         background-color: green;
+         right: 0;
+         bottom: 0;
+         min-width: 100%;
+         min-height: 100%;
+         width: auto;
+         height: 100vp;
+         z-index: -100;
+       }
+
+       /* Style the content */
+
+       h1 {
+         margin: 0;
+         width: 100%;
+         font-size: 400%;
+         letter-spacing: 10%;
+         color: #fff;
+         font-family: Oswald, sans-serif;
+         text-align: center;
+       }
+
+       .text-wrapper {
+         position:absolute;
+         top: 50%;
+         left: 50%;
+         width: 400px;
+         height: 200px;
+         margin-left: -200px;
+         margin-top: 10%;
+       }
+
+    /* content centered within continer*/
+       #container{
+          position: absolute;
+          text-align: center;
+          left: 0;
+          width: 100%;
+          height: 100vp;
+       }
+
+       #content{
+        width: 100%; /*can be in percentage also.*/
+        font-size: 4vw;
+        margin: 17% auto;
+        position: relative;
+       }
+
+       h1 {
+         margin-top: 100vh;
+       }
+
     @import "compass/css3";
 
     @font-face {
@@ -737,20 +870,20 @@
       <div class = "row col-12 col-m-12">
         <div class="left-div left-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold">3.7-liter DOHC 24-valve V6 aluminum-alloy engine</h2>
-          <p style = "font-size: 23px;">The 370Z is powered by the 4th-generation VQ V6 engine. With 3.7-liter displacement for massive muscle, this 332-hp dynamo features advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve, while optimizing fuel efficiency. And while this extensive engineering may sound intriguing on paper, the exhilaration from idle to the 7,500-rpm redline is pure magic.</p>
+          <p style = "font-size: 25px;">The 370Z is powered by the 4th-generation VQ V6 engine. With 3.7-liter displacement for massive muscle, this 332-hp dynamo features advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve, while optimizing fuel efficiency. And while this extensive engineering may sound intriguing on paper, the exhilaration from idle to the 7,500-rpm redline is pure magic.</p>
         </div>
         <div class="right-div right-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold">Continuously Variable Valve Timing Control System (CVTCS) </h2>
-          <p style = "font-size: 23px;">The 370Z features Continuously Variable Valve Timing Control System (CVTCS) with advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve.</p>
+          <p style = "font-size: 25px;">The 370Z features Continuously Variable Valve Timing Control System (CVTCS) with advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve.</p>
         </div>
 
         <div class="left-div left-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold">6-speed manual transmission</h2>
-          <p style = "font-size: 23px;">This is one transmission that’s as much about handling as it is about power. The standard manual transmission keeps you close to the action with 6 close-ratio gears that let you conquer every corner and own the next straightaway. </p>
+          <p style = "font-size: 25px;">This is one transmission that’s as much about handling as it is about power. The standard manual transmission keeps you close to the action with 6 close-ratio gears that let you conquer every corner and own the next straightaway. </p>
         </div>
         <div class="right-div right-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold">7-speed automatic transmission with Downshift Rev Matching</h2>
-          <p style = "font-size: 23px;">A 7-speed automatic transmission gives you the best of a manual and an automatic—a wide spread of gearing for heart-pounding acceleration, while still providing improved efficiency and quiet cruising at higher speeds. </p>
+          <p style = "font-size: 25px;">A 7-speed automatic transmission gives you the best of a manual and an automatic—a wide spread of gearing for heart-pounding acceleration, while still providing improved efficiency and quiet cruising at higher speeds. </p>
         </div>
 
 
@@ -766,20 +899,20 @@
       <div class = "row col-12 col-m-12">
         <div class="no-color-left-div left-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold; text-align: right">NISSAN ADVANCED AIR BAG SYSTEM</h2>
-          <p style = "font-size: 23px;">Nissan Advanced Air Bag System includes dual-stage supplemental front air bags with seat belt sensors and an occupant-classification sensor. The inflation rate of these dual-stage air bags adjusts depending on crash severity and seat belt usage.</p>
+          <p style = "font-size: 25px;">Nissan Advanced Air Bag System includes dual-stage supplemental front air bags with seat belt sensors and an occupant-classification sensor. The inflation rate of these dual-stage air bags adjusts depending on crash severity and seat belt usage.</p>
         </div>
         <div class="no-color-right-div right-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold; text-align: left">VEHICLE DYNAMIC CONTROL (VDC)</h2>
-          <p style = "font-size: 23px;">This standard feature—sometimes called stability control—continuously monitors your steering and braking actions, senses any oversteer or understeer, and compensates by reducing engine speed and/or applying brake pressure to specific wheels.</p>
+          <p style = "font-size: 25px;">This standard feature—sometimes called stability control—continuously monitors your steering and braking actions, senses any oversteer or understeer, and compensates by reducing engine speed and/or applying brake pressure to specific wheels.</p>
         </div>
 
         <div class="no-color-left-div left-text">
           <h2 style = "font-family: 'Abril Fatface';font-size: 29px; font-weight: bold; text-align: right">TRACTION CONTROL SYSTEM (TCS)</h2>
-          <p style = "font-size: 23px;">All the power in the world is useless if you can't get any grip. So when the 370Z's standard Traction Control System senses a rear wheel spin, it responds by helping reduce throttle which helps you both regain grip and maintain control of the road.  </p>
+          <p style = "font-size: 25px;">All the power in the world is useless if you can't get any grip. So when the 370Z's standard Traction Control System senses a rear wheel spin, it responds by helping reduce throttle which helps you both regain grip and maintain control of the road.  </p>
         </div>
         <div class="no-color-right-div right-text;">
           <h2 style = "font-family: 'Abril Fatface'; font-size: 29px; font-weight: bold; text-align: left;">BLUETOOTH HANDS-FREE PHONE SYSTEM</h2>
-          <p style = "font-size: 23px;">Connect with your ride. An available Bluetooth Hands-free Phone System answers your compatible cell phone even if it’s buried in a bag or the trunk. Just press a button on the steering wheel to pick up calls or dial friends.</p>
+          <p style = "font-size: 25px;">Connect with your ride. An available Bluetooth Hands-free Phone System answers your compatible cell phone even if it’s buried in a bag or the trunk. Just press a button on the steering wheel to pick up calls or dial friends.</p>
         </div>
       </div>
     </div>
