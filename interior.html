@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- long page style -->
+  <head>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="index.css"></link>
+    <link rel="stylesheet" type="text/css" href="interior-slider.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="less.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='//fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
+    <style>
+    .mySlides {display:none}
+    .demo {cursor:pointer}
+
+    .parent {
+    position: relative;
+    }
+
+    .child {
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+
+    }
+    </style>
+
+    <!--Slider 360 Script-->
+    <script>
+        Number.prototype.roundTo = function(nTo) {
+          nTo = nTo || 10;
+          return Math.round(this * (1 / nTo) ) * nTo;
+      }
+
+      $(function() {
+          var slides = $('#slider ul').children().length;
+          var slideWidth = $('#slider').width();
+          var min = 0;
+          var max = -((slides - 1) * slideWidth);
+
+          $("#slider ul").width(slides*slideWidth).draggable({
+              axis: 'x',
+              drag: function (event, ui) {
+                  if (ui.position.left > min) ui.position.left = min;
+                  if (ui.position.left < max) ui.position.left = max;
+              },
+              stop: function( event, ui ) {
+                  $(this).animate({'left': (ui.position.left).roundTo(slideWidth)})
+              }
+          });
+      });
+    </script>
+  </head>
+
+  <body style = "background-color: white">
+
+    <!-- Navigation Bar -->
+    <div class="topnav" id="myTopnav">
+      <a href="#learnmore">Learn More</a>
+      <a href="#specs">Specifications</a>
+      <a href="#safety">Safety</a>
+      <a href="index.html">370Z</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div class = "topbar" style = "font-family: 'Abril Fatface';font-size: 32px; font-weight: bold">
+      2017 Z Coupe
+    </div>
+
+    <div class="headings row col-12 col-m-12">
+      <div class="vertical-line" style="height: 45px;"></div>
+    </div>
+    <div class="headings">
+      About
+    </div>
+    <div class = "menu row col-12 col-m-12">
+      <a href = "#specs" style = "text-decoration: none;">SPECS</a>
+      <a href = "#360">TOUR</a>
+    </div>
+
+    <!-- gallery - car 360 view -->
+      <div id = "360" class = "row col-12 col-m-12">
+        <div class="w3-content w3-display-container">
+          <img class="mySlides" src="images/car_slides/car_(1).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(2).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(3).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(4).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(5).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(6).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(7).jpg" style="width:75%; margin:auto">
+          <img class="mySlides" src="images/car_slides/car_(8).jpg" style="width:75%; margin:auto">
+
+
+          <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+          }
+        </script>
+      </div>
+
+    <div class = "redblock row col-12 col-m-12">
+      <div class="vertical-line" style="height: 45px; background-color: white"></div>
+      <div id = "specs" class="headings" style = "color: white">
+        Specifications
+      </div>
+      <div class = "row col-12 col-m-12">
+        <div class="left-div left-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold">3.7-liter DOHC 24-valve V6 aluminum-alloy engine</h2>
+          <p>The 370Z is powered by the 4th-generation VQ V6 engine. With 3.7-liter displacement for massive muscle, this 332-hp dynamo features advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve, while optimizing fuel efficiency. And while this extensive engineering may sound intriguing on paper, the exhilaration from idle to the 7,500-rpm redline is pure magic.</p>
+        </div>
+        <div class="right-div right-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold">Continuously Variable Valve Timing Control System (CVTCS) </h2>
+          <p>The 370Z features Continuously Variable Valve Timing Control System (CVTCS) with advanced Variable Valve Event and Lift (VVEL) technology that continuously tunes valve lift and timing for quicker response and a broader torque curve.</p>
+        </div>
+
+        <div class="left-div left-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold">6-speed manual transmission</h2>
+          <p>This is one transmission that’s as much about handling as it is about power. The standard manual transmission keeps you close to the action with 6 close-ratio gears that let you conquer every corner and own the next straightaway. </p>
+        </div>
+        <div class="right-div right-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold">7-speed automatic transmission with Downshift Rev Matching</h2>
+          <p>A 7-speed automatic transmission gives you the best of a manual and an automatic—a wide spread of gearing for heart-pounding acceleration, while still providing improved efficiency and quiet cruising at higher speeds. </p>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div id = "safety" class = "safetyblock row col-12 col-m-12">
+      <div class="vertical-line" style="height: 45px; background-color: #101010"></div>
+      <div id = "specs" class="headings" style = "color: #101010">
+        Safety
+      </div>
+      <div class = "row col-12 col-m-12">
+        <div class="no-color-left-div left-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold; text-align: right">NISSAN ADVANCED AIR BAG SYSTEM</h2>
+          <p>Nissan Advanced Air Bag System includes dual-stage supplemental front air bags with seat belt sensors and an occupant-classification sensor. The inflation rate of these dual-stage air bags adjusts depending on crash severity and seat belt usage.</p>
+        </div>
+        <div class="no-color-right-div right-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold; text-align: left">VEHICLE DYNAMIC CONTROL (VDC)</h2>
+          <p>This standard feature—sometimes called stability control—continuously monitors your steering and braking actions, senses any oversteer or understeer, and compensates by reducing engine speed and/or applying brake pressure to specific wheels.</p>
+        </div>
+
+        <div class="no-color-left-div left-text">
+          <h2 style = "font-family: 'Abril Fatface';font-size: 130%; font-weight: bold; text-align: right">TRACTION CONTROL SYSTEM (TCS)</h2>
+          <p>All the power in the world is useless if you can't get any grip. So when the 370Z's standard Traction Control System senses a rear wheel spin, it responds by helping reduce throttle which helps you both regain grip and maintain control of the road.  </p>
+        </div>
+        <div class="no-color-right-div right-text;">
+          <h2 style = "font-family: 'Abril Fatface'; font-size: 130%; font-weight: bold; text-align: left;">BLUETOOTH HANDS-FREE PHONE SYSTEM</h2>
+          <p>Connect with your ride. An available Bluetooth Hands-free Phone System answers your compatible cell phone even if it’s buried in a bag or the trunk. Just press a button on the steering wheel to pick up calls or dial friends.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "row col-12 col-m-12 buttonblock" style = "text-align:center;">
+      <div class="vertical-line" style="height: 45px; background-color: white; text-align:center"></div>
+      <div id = "learnmore" class="headings" style = "color: white">
+        Build
+      </div>
+      <div style = "padding-top: 5%">
+        <a href="https://www.nissanusa.com/buildyournissan/variant/index?tool=model.top_nav.build.button&lang=en&globalModelLineName=z-coupe&modelLineCode=Z" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+         Build Car
+        </a>
+        <a href="https://www.nissanusa.com/buildyournissan/requestQuote/index?modelLineCode=Z&lang=en" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+         Get Quote
+        </a>
+        <a href="https://www.nissanusa.com/buildyournissan/test-drive?lang=en" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+         Test Drive
+        </a>
+        <a href="https://www.nissanusa.com/forms/request-a-brochure" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+         Brochure
+        </a>
+      </div>
+    </div>
+  </body>
+
+  <!-- Return to Top -->
+  <script>
+  // ===== Scroll to Top ====
+  $(window).scroll(function() {
+      if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+          $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 500);
+  });
+  </script>
+  <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+</html>
